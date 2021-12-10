@@ -38,6 +38,19 @@ public class ThirdController {
 
         }));
 
+        DatabaseHandler dbHandler = new DatabaseHandler();
+
+        SendButton.setOnAction(actionEvent -> {
+            try {
+
+
+                dbHandler.signUpUser(GasolineSpending.getText(), month.getText());
+                System.out.println(GasolineSpending.getText());
+                System.out.println(month.getText());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     private void thridpage(String gasolineSpendingText, String monthText) {

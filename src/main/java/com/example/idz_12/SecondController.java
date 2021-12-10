@@ -17,37 +17,44 @@ public class SecondController {
     private URL location;
 
     @FXML
-    private TextField ConsumableCosts;
+    private TextField сonsumablesCosts;
 
     @FXML
     private TextField Month;
 
     @FXML
-    private Button sendButton;
+    private Button sendButton1;
 
     @FXML
     void initialize(ActionEvent event) {
 
-        sendButton.setOnAction((actionEvent -> {
-            String ConsumableCostsText = ConsumableCosts.getText();
-            String MonthText = Month.getText();
-
-            if(!ConsumableCostsText.equals("") && !MonthText.equals(""))
-                secondpage(ConsumableCostsText, MonthText);
-                else
-                    System.out.println("Заполните поля");
-
-        }));
+//        sendButton1.setOnAction((actionEvent -> {
+//            String сonsumableCostsText = сonsumablesCosts.getText();
+//            String MonthText = Month.getText();
+//
+//            if(!сonsumableCostsText.equals("") && !MonthText.equals(""))
+//                secondpage(сonsumableCostsText, MonthText);
+//                else
+//                    System.out.println("сonsumablesCosts.getText()");
+//
+//        }));
 
         DatabaseHandler dbHandler = new DatabaseHandler();
 
-        sendButton.setOnAction(actionEvent -> {
-           dbHandler.collectsData(ConsumableCosts.getText(), Month.getText());
+        sendButton1.setOnAction(actionEvent -> {
+            try {
+
+                dbHandler.signUpUser(сonsumablesCosts.getText(), Month.getText());
+                System.out.println(сonsumablesCosts.getText());
+                System.out.println(Month.getText());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
     }
 
-    private void secondpage(String consumableCostsText, String monthText) {
-    }
+//    private void secondpage(String consumableCostsText, String monthText) {
+//    }
 
     @FXML
     void initialize() {

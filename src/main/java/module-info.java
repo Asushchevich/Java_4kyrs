@@ -3,6 +3,7 @@ module com.example.idz_12 {
     requires javafx.fxml;
     requires java.sql;
     requires java.datatransfer;
+    requires mysql.connector.java;
 
 
     opens com.example.idz_12 to javafx.fxml;

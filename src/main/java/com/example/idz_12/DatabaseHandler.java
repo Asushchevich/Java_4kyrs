@@ -16,29 +16,43 @@ public class DatabaseHandler  extends Configs{
 
         return dbConnection;
     }
-    public void collectsData(String idspending, String spendingOnGasoline, String consumablesCosts, String Month) {
-        String insert = "INSERT INTO" + Const.SPENDING +"(" +
+//    public void signUpUser(String idspending, String spendingOnGasoline, String consumablesCosts, String Month) throws SQLException, ClassNotFoundException {
+//        String insert = "INSERT INTO " + Const.USER_TABLE + "(" +
+//                Const.IDSPENDING + "," + Const.SPENDINGONGASOLINE + "," +
+//                Const.CONSUMABLESCOSTS + "," + Const.MONTH +
+//                ")" + "VALUES(?,?,?,?)";
+//
+//
+//
+//
+//            PreparedStatement prSt = getDbConnection().prepareStatement(insert);
+//            prSt.setString(1, idspending);
+//            prSt.setString(2, spendingOnGasoline);
+//            prSt.setString(3, consumablesCosts);
+//            prSt.setString(4, Month);
+//
+//            prSt.executeUpdate();
+//
+//        }
+
+    public void signUpUser(String idspending, String spendingOnGasoline, String consumablesCosts, String Month) throws SQLException, ClassNotFoundException {
+        String insert = "INSERT INTO " + Const.USER_TABLE + "(" +
                 Const.IDSPENDING + "," + Const.SPENDINGONGASOLINE + "," +
                 Const.CONSUMABLESCOSTS + "," + Const.MONTH +
                 ")" + "VALUES(?,?,?,?)";
 
 
 
-        try {
+
             PreparedStatement prSt = getDbConnection().prepareStatement(insert);
             prSt.setString(1, idspending);
-            prSt.setString(1, spendingOnGasoline);
-            prSt.setString(1, consumablesCosts);
-            prSt.setString(1, Month);
+            prSt.setString(2, spendingOnGasoline);
+            prSt.setString(3, consumablesCosts);
+            prSt.setString(4, Month);
 
             prSt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 
-    public void collectsData(String text, String text1) {
+    public void signUpUser(String text, String text1) {
     }
 }
