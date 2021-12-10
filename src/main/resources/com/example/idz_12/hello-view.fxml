@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #4682B4;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.idz_12.HelloController">
+   <children>
+      <AnchorPane layoutY="62.0" prefHeight="338.0" prefWidth="300.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Button fx:id="ServiceCostsButton" layoutX="74.0" layoutY="86.0" mnemonicParsing="false" onAction="#switchWindow" text="Траты на обслуживание " />
+            <Button fx:id="maintenanceSpendingButton" layoutX="82.0" layoutY="169.0" mnemonicParsing="false" onAction="#switchWindow2" text="Траты на содержание" />
+            <Button fx:id="dataRequest" layoutX="101.0" layoutY="253.0" mnemonicParsing="false" text="Запрос данных" />
+         </children>
+      </AnchorPane>
+      <Text layoutX="86.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Учет трат">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
